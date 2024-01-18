@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<!-- We use the HTML5 doctype as it's the most widely supported and our recommended doctype, for more on this visit  https://www.emailonacid.com/blog/article/email-development/doctype_-_the_black_sheep_of_html_email_design/ 
+
+In our HTML tag we include a language for accessibility purposes and VML namespace declaration, for if we need to add specific Outlook VML code.-->
+
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+>
+  <head>
+    <!-- This Outlook specific code helps alleviate the issues caused by high DPI versions of Outlook. -->
+    <!--[if gte mso 9
+      ]><xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG />
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml><!
+    [endif]-->
+    <!-- We always want to include a relevant title in our email, for if users open in a browser. -->
+    <title>Nate Paradiso</title>
+
+    <!-- These two meta tags are extremely important, the first is encoding our characters so we don't have any funky symbols when using special characters
+        the second is telling the browser/email client to render the email in the device's native screen size
+    
+        Read more: https://www.emailonacid.com/blog/article/email-development/the_importance_of_content-type_character_encoding_in_html_emails/ -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+
+    <!--Now we'll get into a few basic pieces of CSS we include in every email, for clients that do support CSS in the head -->
+    <style type="text/css">
+      /* color-scheme and supported-color-schemes enables dark mode control via the dark mode media query */
+      :root {
+        color-scheme: light dark;
+        supported-color-schemes: light dark;
+      }
+
+      /* By default we turn off hover effects on links, your design may have it differently */
+      a:hover {
+        text-decoration: none !important;
+      }
+
+      /* This snippet removed random blue links on Apple Devices */
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+      }
+
+      /* This will stop email clients adding random styling to phone numbers */
+      a[href^="tel"]:hover {
+        text-decoration: none !important;
+      }
+
+      /* We want all our links and images to not have hidden borders, so they fit snugly in the design */
+      a img {
+        border: none;
+      }
+
+      /* Since we're using semantic HTML markup, we want to reset our paragraphs and headings to not have margins by default, if the design needs them we'll add them inline */
+      p {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 0;
+      }
+
+      /* Force Outlook to use our line-heights as an exact value rather than a minimum */
+      table td {
+        mso-line-height-rule: exactly;
+      }
+
+      /* Collapse borders on tables so there are no gaps in Outlook */
+      table {
+        border-collapse: collapse;
+      }
+
+      /* This snippet removed random blue links on Apple Devices */
+      #emailBody #emailWrapper [x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: inherit !important;
+      }
+
+      /* This is the most reliable way of utilizing Google Fonts (or other web fonts) in your email code.
+
+            For a guide on how to find the URL of the webfont you want to use in this way, please visit: https://www.emailonacid.com/blog/article/email-development/web-fonts-google-fonts/ */
+
+      /* Here we are including a few basic Media Queries, these CSS rules will only be applied when the device width is 640px or below.
+
+            Feel free to adjust this value as your design permits/requires. */
+      @font-face {
+        font-family: "Oswald";
+        font-style: normal;
+        font-weight: 200;
+        font-display: swap;
+        color: black;
+        src: url(https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIjg75cFRf3bXL8LICs13FvsUZiZSSUhiCXAA.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+          U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+          U+FEFF, U+FFFD;
+      }
+      .icon {
+        height: 20px;
+      }
+
+      /* Simply setting our container tables to 100% width */
+      @media only screen and (max-width: 600px) {
+        .wrapper {
+          width: 100% !important;
+          padding: 0 !important;
+        }
+
+        /* Here we use this to force our grid sections to expand out and stack on mobile devices */
+        .tflex {
+          display: block !important;
+          width: 100% !important;
+        }
+
+        /* We use this if we need to hide elements on mobile */
+        .hm {
+          display: none !important;
+          width: 0 !important;
+          height: 0 !important;
+          padding: 0 !important;
+          font-size: 0 !important;
+          line-height: 0 !important;
+        }
+        .profile-pic-mobile {
+          height: 200px;
+        }
+        .selfie-pic {
+          width: 100px;
+        }
+        .title {
+          text-align: left;
+          vertical-align: middle;
+        }
+      }
+    </style>
+  </head>
+  <body
+    id="emailBody"
+    class="body"
+    xml:lang="en"
+    style="
+      background: #f6f6f6;
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    "
+  >
+    <div
+      role="article"
+      aria-roledescription="email"
+      aria-label="email name"
+      lang="en"
+      dir="ltr"
+      style="font-size: medium; font-size: max(16px, 1rem)"
+    >
+      <div
+        style="
+          display: none;
+          font-size: 1px;
+          line-height: 1px;
+          max-height: 0px;
+          max-width: 0px;
+          opacity: 0;
+          overflow: hidden;
+          mso-hide: all;
+          font-family: oswald;
+        "
+      ></div>
+      <table
+        border="0"
+        cellpadding="0"
+        cellspacing="0"
+        width="100%"
+        bgcolor="#f6f6f6"
+        class="wrapper"
+        role="presentation"
+      >
+        <tr>
+          <td align="center" valign="top" width="100%">
+            <table
+              width="600"
+              cellpadding="0"
+              cellspacing="0"
+              border="0"
+              class="wrapper"
+              role="presentation"
+            >
+              <tr>
+                <td
+                  width="450"
+                  class="tflex"
+                  align="left"
+                  valign="top"
+                  style="
+                    color: #333333;
+                    font-family: 'Oswald', Arial, sans-serif;
+                    font-size: 16px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                  "
+                >
+                  <h3 style="padding-top: 20px">HTML Email Template</h3>
+                </td>
+                <td
+                  width="50"
+                  align="right"
+                  valign="top"
+                  class="icon"
+                  style="
+                    color: #333333;
+                    font-family: 'Inter', Arial, sans-serif;
+                    font-size: 16px;
+                    padding-top: 20px;
+                  "
+                >
+                  <img
+                    border="0"
+                    class="icon"
+                    style="border: 0; display: block"
+                    src="https://www.svgrepo.com/show/333535/facebook-circle.svg"
+                    alt="facebook-circle"
+                  />
+                </td>
+                <td
+                  width="50"
+                  align="center"
+                  valign="top"
+                  style="
+                    color: #333333;
+                    font-family: 'Inter', Arial, sans-serif;
+                    font-size: 16px;
+                    padding-top: 20px;
+                  "
+                >
+                  <img
+                    border="0"
+                    class="icon"
+                    style="border: 0; display: block"
+                    src="https://www.svgrepo.com/show/333552/instagram.svg"
+                    alt="instagram"
+                  />
+                </td>
+                <td
+                  width="50"
+                  align="left"
+                  valign="top"
+                  style="
+                    color: #333333;
+                    font-family: 'Inter', Arial, sans-serif;
+                    font-size: 16px;
+                    padding-top: 20px;
+                  "
+                >
+                  <img
+                    border="0"
+                    class="icon"
+                    style="border: 0; display: block"
+                    src="https://www.svgrepo.com/show/333494/youtube.svg"
+                    alt="youtube"
+                  />
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table
+        align="center"
+        border="0"
+        cellpadding="0"
+        cellspacing="0"
+        class="wrapper"
+        width="100%"
+        style="max-width: 600px; height: 350px; margin-top: 20px"
+        role="presentation"
+      >
+        <tr>
+          <td align="center" valign="top" width="100%">
+            <table>
+              <tr>
+                <td
+                  width="450"
+                  class="title"
+                  align="left"
+                  valign="center"
+                  style="
+                    height: 200px;
+                    color: #333333;
+                    font-family: 'oswald', Arial, sans-serif;
+                    font-size: 16px;
+                    padding-left: 40px;
+                  "
+                >
+                  <h3 style="color: goldenrod; text-transform: uppercase; font-weight: 600">
+                    Nate Paradiso
+                  </h3>
+                  <h1>Software Engineer</h1>
+                </td>
+                <td class="rhombus">
+                  <img
+                    style="height: 300px; clip-path: polygon(5% 10%, 100% 0%, 100% 100%, 0% 95%)"
+                    class="profile-pic-mobile"
+                    src="https://media.licdn.com/dms/image/D5603AQEw6WTxoL_AxQ/profile-displayphoto-shrink_800_800/0/1700332197106?e=1710979200&v=beta&t=l3zIKGFozrzijHzJw2zF28rb2S9C4WzgQfy-rP2K6A4"
+                    alt="Nate Paradiso Profile Pic"
+                  />
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table
+        align="center"
+        border="0"
+        cellpadding="0"
+        cellspacing="0"
+        class="wrapper"
+        width="100%"
+        style="max-width: 600px; background-color: #efefef"
+        role="presentation"
+      >
+        <tr>
+          <td align="center" valign="top" width="100%">
+            <table>
+              <tr>
+                <td
+                  width="300"
+                  align="left"
+                  valign="center"
+                  style="
+                    height: 200px;
+                    color: #333333;
+                    font-family: 'oswald', Arial, sans-serif;
+                    font-size: 16px;
+                    padding: 50px 10px 50px 50px;
+                  "
+                >
+                  <a href="https://selfie-photographer-of-the-year.netlify.app/" target="_blank">
+                    <img
+                      style="width: 300px; margin: 15px; border-radius: 30px"
+                      class="selfie-pic"
+                      src="https://i.postimg.cc/T1DxKpKP/Screenshot-2024-01-17-at-4-32-50-PM.png"
+                      alt="selfie photographer of the year"
+                    />
+                  </a>
+                </td>
+                <td
+                  width="300"
+                  align="left"
+                  valign="center"
+                  style="
+                    height: 200px;
+                    color: #333333;
+                    font-family: 'oswald', Arial, sans-serif;
+                    font-size: 16px;
+                    padding: 0px 10px;
+                  "
+                >
+                  <h3 style="color: goldenrod">- about me</h3>
+                  <h2>I design and develop websites that are fun and unique.</h2>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
