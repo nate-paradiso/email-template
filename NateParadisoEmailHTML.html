@@ -142,14 +142,28 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
           line-height: 0 !important;
         }
         .profile-pic-mobile {
-          height: 200px;
+          height: 200px !important;
         }
         .selfie-pic {
-          width: 100px;
+          width: 150px !important;
         }
         .title {
-          text-align: left;
-          vertical-align: middle;
+          text-align: left !important;
+          vertical-align: middle !important;
+        }
+        .about-mobile {
+          padding: 0 30px 10px 0 !important;
+        }
+        .hero-mobile {
+          height: 220px !important;
+        }
+        .about-text {
+          font-size: 1rem !important;
+          padding-right: 10px;
+          font-size: 0.5rem;
+        }
+        .summary-mobile {
+          font-size: 0.75rem;
         }
       }
     </style>
@@ -234,13 +248,15 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                     padding-top: 20px;
                   "
                 >
-                  <img
-                    border="0"
-                    class="icon"
-                    style="border: 0; display: block"
-                    src="https://www.svgrepo.com/show/333535/facebook-circle.svg"
-                    alt="facebook-circle"
-                  />
+                  <a href="https://github.com/nate-paradiso" target="_blank">
+                    <img
+                      border="0"
+                      class="icon"
+                      style="border: 0; display: block"
+                      src="https://www.svgrepo.com/show/333546/github.svg"
+                      alt="github-circle"
+                    />
+                  </a>
                 </td>
                 <td
                   width="50"
@@ -253,13 +269,15 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                     padding-top: 20px;
                   "
                 >
-                  <img
-                    border="0"
-                    class="icon"
-                    style="border: 0; display: block"
-                    src="https://www.svgrepo.com/show/333552/instagram.svg"
-                    alt="instagram"
-                  />
+                  <a href="https://www.linkedin.com/in/nate-paradiso" target="_blank">
+                    <img
+                      border="0"
+                      class="icon"
+                      style="border: 0; display: block"
+                      src="https://www.svgrepo.com/show/438654/linkedin-square.svg"
+                      alt="linkedin"
+                    />
+                  </a>
                 </td>
                 <td
                   width="50"
@@ -272,13 +290,15 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                     padding-top: 20px;
                   "
                 >
-                  <img
-                    border="0"
-                    class="icon"
-                    style="border: 0; display: block"
-                    src="https://www.svgrepo.com/show/333494/youtube.svg"
-                    alt="youtube"
-                  />
+                  <a href="https://www.nateparadisophotography.com/" target="_blank">
+                    <img
+                      border="0"
+                      class="icon"
+                      style="border: 0; display: block"
+                      src="https://images.squarespace-cdn.com/content/v1/56d8c26c1d07c0c34e7649e5/1460940620240-HNR6092V3R2AIDNLAOV8/NPLogoDropShadow.png?format=1000w"
+                      alt="Nate Paradiso Photography"
+                    />
+                  </a>
                 </td>
               </tr>
             </table>
@@ -290,7 +310,7 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
         border="0"
         cellpadding="0"
         cellspacing="0"
-        class="wrapper"
+        class="wrapper hero-mobile"
         width="100%"
         style="max-width: 600px; height: 350px; margin-top: 20px"
         role="presentation"
@@ -319,8 +339,8 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                 </td>
                 <td class="rhombus">
                   <img
-                    style="height: 300px; clip-path: polygon(5% 10%, 100% 0%, 100% 100%, 0% 95%)"
                     class="profile-pic-mobile"
+                    style="height: 300px; clip-path: polygon(5% 10%, 100% 0%, 100% 100%, 0% 95%)"
                     src="https://media.licdn.com/dms/image/D5603AQEw6WTxoL_AxQ/profile-displayphoto-shrink_800_800/0/1700332197106?e=1710979200&v=beta&t=l3zIKGFozrzijHzJw2zF28rb2S9C4WzgQfy-rP2K6A4"
                     alt="Nate Paradiso Profile Pic"
                   />
@@ -342,7 +362,7 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
       >
         <tr>
           <td align="center" valign="top" width="100%">
-            <table>
+            <table class="wrapper">
               <tr>
                 <td
                   width="300"
@@ -353,12 +373,12 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                     color: #333333;
                     font-family: 'oswald', Arial, sans-serif;
                     font-size: 16px;
-                    padding: 50px 10px 50px 50px;
+                    padding: 50px 0px 50px 30px;
                   "
                 >
                   <a href="https://selfie-photographer-of-the-year.netlify.app/" target="_blank">
                     <img
-                      style="width: 300px; margin: 15px; border-radius: 30px"
+                      style="width: 300px; margin: 15px; border-radius: 20px"
                       class="selfie-pic"
                       src="https://i.postimg.cc/T1DxKpKP/Screenshot-2024-01-17-at-4-32-50-PM.png"
                       alt="selfie photographer of the year"
@@ -369,6 +389,7 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                   width="300"
                   align="left"
                   valign="center"
+                  class="about-mobile"
                   style="
                     height: 200px;
                     color: #333333;
@@ -377,8 +398,180 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                     padding: 0px 10px;
                   "
                 >
-                  <h3 style="color: goldenrod">- about me</h3>
-                  <h2>I design and develop websites that are fun and unique.</h2>
+                  <h3 style="color: #daa520">- about me -</h3>
+                  <h2 class="about-text" style="padding-right: 20px">
+                    I craft websites that are both playful and distinctive, seamlessly merging
+                    creativity with functionality.
+                  </h2>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table
+        align="center"
+        border="0"
+        cellpadding="0"
+        cellspacing="0"
+        class="wrapper"
+        width="100%"
+        style="max-width: 600px"
+        role="presentation"
+      >
+        <tr>
+          <td align="center" valign="top" width="100%">
+            <table>
+              <tr>
+                <td
+                  width="400"
+                  align="left"
+                  valign="center"
+                  style="
+                    height: 200px;
+                    font-family: 'oswald', Arial, sans-serif;
+                    font-size: 16px;
+                    padding: 20px 20px 20px 50px;
+                    color: #333333;
+                  "
+                >
+                  <h3 style="color: #daa520">- resume -</h3>
+                  <p class="summary-mobile">
+                    As a Software Engineer and Photographer, I combine analytical skills from my
+                    environmental science background with a creative eye developed through
+                    photography. Excited to learn coding languages, collaborate with innovative
+                    teams, and bring a fresh perspective to software development, I bridge my past
+                    experiences with a promising future in technology, specializing in HTML5, CSS3,
+                    JavaScript, React, and more.
+                  </p>
+                </td>
+
+                <td style="padding: 10px 10px" align="center" valign="middle" width="200">
+                  <a
+                    href="https://drive.google.com/file/d/1mWwFfQJBXjeywAt2t_C5JUeGVH_EZp5e/view?usp=sharing"
+                    download="Nate_Paradiso_resume_2024.pdf"
+                    target="_blank"
+                    style="text-decoration: none"
+                  >
+                    <button
+                      style="
+                        width: 80px;
+                        height: 45px;
+                        padding: 5px;
+                        border-radius: 10px;
+                        background-color: #daa520;
+                        font-family: 'oswald', Arial, sans-serif;
+                        color: #fff;
+                        border: none;
+                        cursor: pointer;
+                      "
+                    >
+                      Download CV
+                    </button>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table
+        align="center"
+        border="0"
+        cellpadding="0"
+        cellspacing="0"
+        class="wrapper"
+        width="100%"
+        style="max-width: 600px; margin-top: 30px; margin-bottom: 30px"
+        role="presentation"
+      >
+        <tr>
+          <td align="center" valign="middle" width="100%">
+            <table>
+              <tr>
+                <td
+                  width="100"
+                  align="center"
+                  valign="center"
+                  class="tflex"
+                  style="
+                    font-family: 'oswald', Arial, sans-serif;
+                    font-size: 16px;
+                    color: #333333;
+                    background-color: #efefef;
+                    padding: 10px;
+                    border-radius: 8px;
+                  "
+                >
+                  <h2>Versatile Developer</h2>
+                </td>
+                <td style="width: 50px; background-color: transparent" class="tflex"></td>
+
+                <td
+                  width="100"
+                  align="center"
+                  valign="center"
+                  class="tflex"
+                  style="
+                    font-family: 'oswald', Arial, sans-serif;
+                    font-size: 16px;
+                    color: #333333;
+                    background-color: #efefef;
+                    padding: 10px;
+                    border-radius: 8px;
+                  "
+                >
+                  <h2>Creative Photographer</h2>
+                </td>
+                <td style="width: 50px; background-color: transparent" class="tflex"></td>
+                <td
+                  width="100"
+                  align="center"
+                  valign="center"
+                  class="tflex"
+                  style="
+                    font-family: 'oswald', Arial, sans-serif;
+                    font-size: 16px;
+                    color: #333333;
+                    background-color: #efefef;
+                    padding: 10px;
+                    border-radius: 8px;
+                  "
+                >
+                  <h2>Innovative Problem-Solver</h2>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table
+        align="center"
+        border="0"
+        cellpadding="0"
+        cellspacing="0"
+        width="100%"
+        style="max-width: 600px"
+        role="presentation"
+      >
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td
+                  width="600px"
+                  align="center"
+                  valign="center"
+                  style="
+                    height: 100px;
+                    font-family: 'oswald', Arial, sans-serif;
+                    font-size: 16px;
+                    color: #333333;
+                    background-color: #efefef;
+                    padding: 10px;
+                  "
+                >
+                  <p>Thanks for stopping by!</p>
                 </td>
               </tr>
             </table>
