@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- We use the HTML5 doctype as it's the most widely supported and our recommended doctype, for more on this visit  https://www.emailonacid.com/blog/article/email-development/doctype_-_the_black_sheep_of_html_email_design/ 
 
 In our HTML tag we include a language for accessibility purposes and VML namespace declaration, for if we need to add specific Outlook VML code.-->
@@ -9,18 +9,16 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
   xmlns:v="urn:schemas-microsoft-com:vml"
   xmlns:o="urn:schemas-microsoft-com:office:office"
 >
+  <!-- This Outlook specific code helps alleviate the issues caused by high DPI versions of Outlook. -->
+  <!-- <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG />
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml> -->
   <head>
-    <!-- This Outlook specific code helps alleviate the issues caused by high DPI versions of Outlook. -->
-    <!--[if gte mso 9
-      ]><xml>
-        <o:OfficeDocumentSettings>
-          <o:AllowPNG />
-          <o:PixelsPerInch>96</o:PixelsPerInch>
-        </o:OfficeDocumentSettings>
-      </xml><!
-    [endif]-->
     <!-- We always want to include a relevant title in our email, for if users open in a browser. -->
-    <title>Nate Paradiso</title>
+    <title>Nate Paradiso HTML Email Template</title>
 
     <!-- These two meta tags are extremely important, the first is encoding our characters so we don't have any funky symbols when using special characters
         the second is telling the browser/email client to render the email in the device's native screen size
@@ -60,6 +58,7 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
       /* We want all our links and images to not have hidden borders, so they fit snugly in the design */
       a img {
         border: none;
+        border: 0;
       }
 
       /* Since we're using semantic HTML markup, we want to reset our paragraphs and headings to not have margins by default, if the design needs them we'll add them inline */
@@ -108,6 +107,7 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
         font-style: normal;
         font-weight: 200;
         font-display: swap;
+        mso-font-alt: "Arial";
         color: black;
         src: url(https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIjg75cFRf3bXL8LICs13FvsUZiZSSUhiCXAA.woff2)
           format("woff2");
@@ -115,12 +115,9 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
           U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
           U+FEFF, U+FFFD;
       }
-      .icon {
-        height: 20px;
-      }
 
       /* Simply setting our container tables to 100% width */
-      @media only screen and (max-width: 600px) {
+      @media only screen and (max-width: 640px) {
         .wrapper {
           width: 100% !important;
           padding: 0 !important;
@@ -130,6 +127,10 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
         .tflex {
           display: block !important;
           width: 100% !important;
+        }
+        .tflex-column {
+          display: inline-block !important;
+          width: 25rem !important;
         }
 
         /* We use this if we need to hide elements on mobile */
@@ -142,24 +143,26 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
           line-height: 0 !important;
         }
         .profile-pic-mobile {
-          height: 200px !important;
+          height: 12.5rem !important;
+          width: 12.5rem !important;
         }
         .selfie-pic {
-          width: 150px !important;
+          height: 16.6669rem !important;
+          width: 9.375rem !important;
         }
         .title {
           text-align: left !important;
           vertical-align: middle !important;
         }
         .about-mobile {
-          padding: 0 30px 10px 0 !important;
+          padding: 0 1.875rem 0.625rem 0 !important;
         }
         .hero-mobile {
-          height: 220px !important;
+          height: 13.75rem !important;
         }
         .about-text {
           font-size: 1rem !important;
-          padding-right: 10px;
+          padding-right: 0.625rem;
           font-size: 0.5rem;
         }
         .summary-mobile {
@@ -230,11 +233,11 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                     color: #333333;
                     font-family: 'Oswald', Arial, sans-serif;
                     font-size: 16px;
-                    padding-left: 20px;
-                    padding-right: 20px;
+                    padding-left: 1.25rem;
+                    padding-right: 1.25rem;
                   "
                 >
-                  <h3 style="padding-top: 20px">HTML Email Template</h3>
+                  <h3 style="padding-top: 1rem">HTML Email Template</h3>
                 </td>
                 <td
                   width="50"
@@ -245,15 +248,14 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                     color: #333333;
                     font-family: 'Inter', Arial, sans-serif;
                     font-size: 16px;
-                    padding-top: 20px;
+                    padding-top: 1.25rem;
                   "
                 >
                   <a href="https://github.com/nate-paradiso" target="_blank">
                     <img
                       border="0"
-                      class="icon"
-                      style="border: 0; display: block"
-                      src="https://www.svgrepo.com/show/333546/github.svg"
+                      style="border: 0; display: block; height: 1.25rem; width: 1.25rem"
+                      src="https://i.postimg.cc/9fkMQZLw/github-svgrepo-com-1.png"
                       alt="github-circle"
                     />
                   </a>
@@ -266,15 +268,14 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                     color: #333333;
                     font-family: 'Inter', Arial, sans-serif;
                     font-size: 16px;
-                    padding-top: 20px;
+                    padding-top: 1.25rem;
                   "
                 >
                   <a href="https://www.linkedin.com/in/nate-paradiso" target="_blank">
                     <img
                       border="0"
-                      class="icon"
-                      style="border: 0; display: block"
-                      src="https://www.svgrepo.com/show/438654/linkedin-square.svg"
+                      style="border: 0; display: block; height: 1.25rem; width: 1.25rem"
+                      src="https://i.postimg.cc/x8tB9yPW/linkedin-svgrepo-com.png"
                       alt="linkedin"
                     />
                   </a>
@@ -287,15 +288,14 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                     color: #333333;
                     font-family: 'Inter', Arial, sans-serif;
                     font-size: 16px;
-                    padding-top: 20px;
+                    padding-top: 1.25rem;
                   "
                 >
                   <a href="https://www.nateparadisophotography.com/" target="_blank">
                     <img
                       border="0"
-                      class="icon"
-                      style="border: 0; display: block"
-                      src="https://images.squarespace-cdn.com/content/v1/56d8c26c1d07c0c34e7649e5/1460940620240-HNR6092V3R2AIDNLAOV8/NPLogoDropShadow.png?format=1000w"
+                      style="border: 0; display: block; height: 1.25rem; width: 1.25rem"
+                      src="https://i.postimg.cc/t4V4JYVs/NPLogo-Drop-Shadow.png"
                       alt="Nate Paradiso Photography"
                     />
                   </a>
@@ -312,12 +312,12 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
         cellspacing="0"
         class="wrapper hero-mobile"
         width="100%"
-        style="max-width: 600px; height: 350px; margin-top: 20px"
+        style="max-width: 37.5rem; height: 21.875rem; margin-top: 1.25rem"
         role="presentation"
       >
         <tr>
           <td align="center" valign="top" width="100%">
-            <table>
+            <table role="presentation">
               <tr>
                 <td
                   width="450"
@@ -325,23 +325,33 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                   align="left"
                   valign="center"
                   style="
-                    height: 200px;
+                    height: 12.5rem;
                     color: #333333;
                     font-family: 'oswald', Arial, sans-serif;
                     font-size: 16px;
-                    padding-left: 40px;
+                    padding-left: 2.5rem;
                   "
                 >
-                  <h3 style="color: goldenrod; text-transform: uppercase; font-weight: 600">
+                  <h3 style="color: #8a6814; text-transform: uppercase; font-weight: 600">
                     Nate Paradiso
                   </h3>
                   <h1>Software Engineer</h1>
                 </td>
+                <td style="width: 3.125rem; background-color: transparent"></td>
                 <td class="rhombus">
                   <img
+                    border="0"
                     class="profile-pic-mobile"
-                    style="height: 300px; clip-path: polygon(5% 10%, 100% 0%, 100% 100%, 0% 95%)"
-                    src="https://media.licdn.com/dms/image/D5603AQEw6WTxoL_AxQ/profile-displayphoto-shrink_800_800/0/1700332197106?e=1710979200&v=beta&t=l3zIKGFozrzijHzJw2zF28rb2S9C4WzgQfy-rP2K6A4"
+                    style="
+                      height: 18.75rem;
+                      width: 18.75rem;
+                      clip-path: polygon(5% 10%, 100% 0%, 100% 100%, 0% 95%);
+
+                      border-top-left-radius: 1.25rem;
+                      border-bottom-left-radius: 1.25rem;
+                      border: 0;
+                    "
+                    src="https://i.postimg.cc/9F9kf7BR/06-Nathan-Paradiso-2-Software-Engineering-Sep-2023.png"
                     alt="Nate Paradiso Profile Pic"
                   />
                 </td>
@@ -357,30 +367,36 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
         cellspacing="0"
         class="wrapper"
         width="100%"
-        style="max-width: 600px; background-color: #efefef"
+        style="max-width: 37.5rem; background-color: #efefef"
         role="presentation"
       >
         <tr>
           <td align="center" valign="top" width="100%">
-            <table class="wrapper">
+            <table class="wrapper" role="presentation">
               <tr>
                 <td
                   width="300"
                   align="left"
                   valign="center"
                   style="
-                    height: 200px;
+                    height: 12.5rem;
                     color: #333333;
                     font-family: 'oswald', Arial, sans-serif;
                     font-size: 16px;
-                    padding: 50px 0px 50px 30px;
+                    padding: 3.125rem 0rem 3.125rem 1.875rem;
                   "
                 >
                   <a href="https://selfie-photographer-of-the-year.netlify.app/" target="_blank">
                     <img
-                      style="width: 300px; margin: 15px; border-radius: 20px"
+                      style="
+                        width: 18.75rem;
+                        height: 33.3331rem;
+                        margin: 0.9375rem;
+                        border-radius: 1.25rem;
+                        border: 0;
+                      "
                       class="selfie-pic"
-                      src="https://i.postimg.cc/T1DxKpKP/Screenshot-2024-01-17-at-4-32-50-PM.png"
+                      src="https://i.postimg.cc/W4pjrn9f/Screenshot-2024-01-19-at-1-58-15-PM.png"
                       alt="selfie photographer of the year"
                     />
                   </a>
@@ -391,15 +407,15 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                   valign="center"
                   class="about-mobile"
                   style="
-                    height: 200px;
+                    height: 12.5rem;
                     color: #333333;
                     font-family: 'oswald', Arial, sans-serif;
                     font-size: 16px;
-                    padding: 0px 10px;
+                    padding: 0rem 0.625rem;
                   "
                 >
-                  <h3 style="color: #daa520">- about me -</h3>
-                  <h2 class="about-text" style="padding-right: 20px">
+                  <h3 style="color: #8a6814">- about me -</h3>
+                  <h2 class="about-text" style="padding-right: 1.25rem">
                     I craft websites that are both playful and distinctive, seamlessly merging
                     creativity with functionality.
                   </h2>
@@ -416,26 +432,26 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
         cellspacing="0"
         class="wrapper"
         width="100%"
-        style="max-width: 600px"
+        style="max-width: 37.5rem"
         role="presentation"
       >
         <tr>
           <td align="center" valign="top" width="100%">
-            <table>
+            <table role="presentation">
               <tr>
                 <td
                   width="400"
                   align="left"
                   valign="center"
                   style="
-                    height: 200px;
+                    height: 12.5rem;
                     font-family: 'oswald', Arial, sans-serif;
                     font-size: 16px;
-                    padding: 20px 20px 20px 50px;
+                    padding: 1.25rem 1.25rem 1.25rem 3.125rem;
                     color: #333333;
                   "
                 >
-                  <h3 style="color: #daa520">- resume -</h3>
+                  <h3 style="color: #8a6814">- resume -</h3>
                   <p class="summary-mobile">
                     As a Software Engineer and Photographer, I combine analytical skills from my
                     environmental science background with a creative eye developed through
@@ -446,20 +462,20 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                   </p>
                 </td>
 
-                <td style="padding: 10px 10px" align="center" valign="middle" width="200">
+                <td style="padding: 0.625rem 0.625rem" align="center" valign="middle" width="200">
                   <a
                     href="https://drive.google.com/file/d/1mWwFfQJBXjeywAt2t_C5JUeGVH_EZp5e/view?usp=sharing"
                     download="Nate_Paradiso_resume_2024.pdf"
                     target="_blank"
-                    style="text-decoration: none"
+                    style="text-decoration: underline"
                   >
                     <button
                       style="
-                        width: 80px;
-                        height: 45px;
-                        padding: 5px;
-                        border-radius: 10px;
-                        background-color: #daa520;
+                        width: 7rem;
+                        height: 2.8125rem;
+                        padding: 0.3125rem;
+                        border-radius: 0.625rem;
+                        background-color: #8a6814;
                         font-family: 'oswald', Arial, sans-serif;
                         color: #fff;
                         border: none;
@@ -482,67 +498,94 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
         cellspacing="0"
         class="wrapper"
         width="100%"
-        style="max-width: 600px; margin-top: 30px; margin-bottom: 30px"
+        style="max-width: 37.5rem; margin-top: 1.875rem; margin-bottom: 1.875rem"
         role="presentation"
       >
         <tr>
-          <td align="center" valign="middle" width="100%">
-            <table>
-              <tr>
-                <td
-                  width="100"
-                  align="center"
-                  valign="center"
-                  class="tflex"
-                  style="
-                    font-family: 'oswald', Arial, sans-serif;
-                    font-size: 16px;
-                    color: #333333;
-                    background-color: #efefef;
-                    padding: 10px;
-                    border-radius: 8px;
-                  "
+          <table
+            align="center"
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            class="wrapper"
+            width="100%"
+            style="max-width: 37.5rem; margin-top: 1.875rem; margin-bottom: 1.875rem"
+            role="presentation"
+          >
+            <tr>
+              <td align="center" valign="top" width="100%">
+                <!-- Container table with conditional width -->
+                <!--[if (gte mso 9)|(IE)]>
+      <table role="presentation" class="tflex" style="width: 100%;">
+      <![endif]-->
+                <!--[if !mso]><!-->
+                <table
+                  role="presentation"
+                  class="tflex-column"
+                  style="max-width: 600px; width: 100%"
                 >
-                  <h2>Versatile Developer</h2>
-                </td>
-                <td style="width: 50px; background-color: transparent" class="tflex"></td>
-
-                <td
-                  width="100"
-                  align="center"
-                  valign="center"
-                  class="tflex"
-                  style="
-                    font-family: 'oswald', Arial, sans-serif;
-                    font-size: 16px;
-                    color: #333333;
-                    background-color: #efefef;
-                    padding: 10px;
-                    border-radius: 8px;
-                  "
-                >
-                  <h2>Creative Photographer</h2>
-                </td>
-                <td style="width: 50px; background-color: transparent" class="tflex"></td>
-                <td
-                  width="100"
-                  align="center"
-                  valign="center"
-                  class="tflex"
-                  style="
-                    font-family: 'oswald', Arial, sans-serif;
-                    font-size: 16px;
-                    color: #333333;
-                    background-color: #efefef;
-                    padding: 10px;
-                    border-radius: 8px;
-                  "
-                >
-                  <h2>Innovative Problem-Solver</h2>
-                </td>
-              </tr>
-            </table>
-          </td>
+                  <!--<![endif]-->
+                  <tr>
+                    <!-- First column -->
+                    <td style="background-color: transparent" class="tflex-column"></td>
+                    <td
+                      align="center"
+                      valign="middle"
+                      class="tflex-column"
+                      width="25%"
+                      style="
+                        font-family: 'oswald', Arial, sans-serif;
+                        font-size: 16px;
+                        color: #333333;
+                        background-color: #efefef;
+                        padding: 0.625rem;
+                        border-radius: 0.5rem;
+                      "
+                    >
+                      <h2>Versatile Developer</h2>
+                    </td>
+                    <td style="background-color: transparent" class="tflex-column"></td>
+                    <!-- Second column -->
+                    <td
+                      align="center"
+                      valign="middle"
+                      width="25%"
+                      class="tflex-column"
+                      style="
+                        font-family: 'oswald', Arial, sans-serif;
+                        font-size: 16px;
+                        color: #333333;
+                        background-color: #efefef;
+                        padding: 0.625rem;
+                        border-radius: 0.5rem;
+                      "
+                    >
+                      <h2>Creative Photographer</h2>
+                    </td>
+                    <td style="background-color: transparent" class="tflex-column"></td>
+                    <!-- Third column -->
+                    <td
+                      align="center"
+                      valign="middle"
+                      width="25%"
+                      class="tflex-column"
+                      style="
+                        font-family: 'oswald', Arial, sans-serif;
+                        font-size: 16px;
+                        color: #333333;
+                        background-color: #efefef;
+                        padding: 0.625rem;
+                        border-radius: 0.5rem;
+                      "
+                    >
+                      <h2>Innovative Problem-Solver</h2>
+                    </td>
+                    <td style="background-color: transparent" class="tflex-column"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
         </tr>
       </table>
       <table
@@ -556,19 +599,19 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
       >
         <tr>
           <td>
-            <table>
+            <table role="presentation">
               <tr>
                 <td
-                  width="600px"
+                  width="600"
                   align="center"
                   valign="center"
                   style="
-                    height: 100px;
+                    height: 6.25rem;
                     font-family: 'oswald', Arial, sans-serif;
                     font-size: 16px;
                     color: #333333;
                     background-color: #efefef;
-                    padding: 10px;
+                    padding: 0.625rem;
                   "
                 >
                   <p>Thanks for stopping by!</p>
