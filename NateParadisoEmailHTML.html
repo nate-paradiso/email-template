@@ -106,7 +106,8 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
         font-style: normal;
         font-weight: 200;
         font-display: swap;
-        mso-font-alt: "Courier New, Georgia, Times New Roma, Trebuchet";
+        mso-generic-font-family: modern;
+        mso-font-alt: "Trebuchet, Courier New, Georgia, Times New Roma";
         color: black;
         src: url(https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIjg75cFRf3bXL8LICs13FvsUZiZSSUhiCXAA.woff2)
           format("woff2");
@@ -371,7 +372,7 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
       >
         <tr>
           <td align="center" valign="top" width="100%">
-            <table class="wrapper">
+            <table class="wrapper" role="presentation">
               <tr>
                 <td
                   width="300"
@@ -383,13 +384,14 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                     font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                     font-size: 16px;
                     padding: 50px 0px 50px 30px;
+                    border: 0;
                   "
                 >
                   <a href="https://selfie-photographer-of-the-year.netlify.app/" target="_blank">
                     <img
-                      style="width: 300px; margin: 15px"
+                      style="width: 300px; margin: 0.9375rem; mso-margin-alt: 0.9375rem"
                       class="selfie-pic"
-                      src="https://i.postimg.cc/jdPc0sHx/Screenshot-2024-01-19-at-1-58-15-PM.png"
+                      src="https://i.postimg.cc/BQCFSHF7/Screenshot-2024-01-19-at-1-58-15-PM.png"
                       alt="selfie photographer of the year"
                     />
                   </a>
@@ -400,15 +402,16 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                   valign="center"
                   class="about-mobile"
                   style="
-                    height: 200px;
+                    height: 12.5rem;
                     color: #333333;
                     font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                     font-size: 16px;
-                    padding: 0px 10px;
+                    padding: 0px 0.625rem;
+                    mso-padding-alt: 0rem 0.625rem;
                   "
                 >
                   <h3 style="color: #8a6814">- about me -</h3>
-                  <h2 class="about-text" style="padding-right: 20px">
+                  <h2 class="about-text" style="padding: 1.25rem; mso-padding-alt: 1.25rem">
                     I craft websites that are both playful and distinctive, seamlessly merging
                     creativity with functionality.
                   </h2>
