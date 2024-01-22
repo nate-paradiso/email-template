@@ -2,7 +2,6 @@
 <!-- We use the HTML5 doctype as it's the most widely supported and our recommended doctype, for more on this visit  https://www.emailonacid.com/blog/article/email-development/doctype_-_the_black_sheep_of_html_email_design/ 
 
 In our HTML tag we include a language for accessibility purposes and VML namespace declaration, for if we need to add specific Outlook VML code.-->
-
 <html
   lang="en"
   xmlns="http://www.w3.org/1999/xhtml"
@@ -107,7 +106,7 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
         font-style: normal;
         font-weight: 200;
         font-display: swap;
-        mso-font-alt: "Arial";
+        mso-font-alt: "Courier New, Georgia, Times New Roma, Trebuchet";
         color: black;
         src: url(https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIjg75cFRf3bXL8LICs13FvsUZiZSSUhiCXAA.woff2)
           format("woff2");
@@ -127,10 +126,6 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
         .tflex {
           display: block !important;
           width: 100% !important;
-        }
-        .tflex-column {
-          display: inline-block !important;
-          width: 25rem !important;
         }
 
         /* We use this if we need to hide elements on mobile */
@@ -201,7 +196,7 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
           opacity: 0;
           overflow: hidden;
           mso-hide: all;
-          font-family: oswald;
+          font-family: oswald, Courier New, Georgia, Times New Roman, Trebuchet;
         "
       ></div>
       <table
@@ -231,10 +226,12 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                   valign="top"
                   style="
                     color: #333333;
-                    font-family: 'Oswald', Arial, sans-serif;
+                    font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                     font-size: 16px;
                     padding-left: 1.25rem;
                     padding-right: 1.25rem;
+                    mso-padding-left-alt: 1.25rem; /* Conditional left padding for Outlook */
+                    mso-padding-right-alt: 1.25rem; /* Conditional right padding for Outlook */
                   "
                 >
                   <h3 style="padding-top: 1rem">HTML Email Template</h3>
@@ -246,9 +243,10 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                   class="icon"
                   style="
                     color: #333333;
-                    font-family: 'Inter', Arial, sans-serif;
+                    font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                     font-size: 16px;
                     padding-top: 1.25rem;
+                    mso-padding-top-alt: 1.25rem; /* Conditional top padding for Outlook */
                   "
                 >
                   <a href="https://github.com/nate-paradiso" target="_blank">
@@ -266,9 +264,10 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                   valign="top"
                   style="
                     color: #333333;
-                    font-family: 'Inter', Arial, sans-serif;
+                    font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                     font-size: 16px;
                     padding-top: 1.25rem;
+                    mso-padding-top-alt: 1.25rem; /* Conditional top padding for Outlook */
                   "
                 >
                   <a href="https://www.linkedin.com/in/nate-paradiso" target="_blank">
@@ -286,9 +285,10 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                   valign="top"
                   style="
                     color: #333333;
-                    font-family: 'Inter', Arial, sans-serif;
+                    font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                     font-size: 16px;
                     padding-top: 1.25rem;
+                    mso-padding-top-alt: 1.25rem; /* Conditional top padding for Outlook */
                   "
                 >
                   <a href="https://www.nateparadisophotography.com/" target="_blank">
@@ -305,6 +305,7 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
           </td>
         </tr>
       </table>
+
       <table
         align="center"
         border="0"
@@ -312,7 +313,12 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
         cellspacing="0"
         class="wrapper hero-mobile"
         width="100%"
-        style="max-width: 37.5rem; height: 21.875rem; margin-top: 1.25rem"
+        style="
+          max-width: 37.5rem;
+          height: 21.875rem;
+          margin-top: 1.25rem;
+          mso-margin-top-alt: 1.25rem;
+        "
         role="presentation"
       >
         <tr>
@@ -327,9 +333,10 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                   style="
                     height: 12.5rem;
                     color: #333333;
-                    font-family: 'oswald', Arial, sans-serif;
+                    font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                     font-size: 16px;
                     padding-left: 2.5rem;
+                    mso-padding-left-alt: 2.5rem; /* Conditional left padding for Outlook */
                   "
                 >
                   <h3 style="color: #8a6814; text-transform: uppercase; font-weight: 600">
@@ -338,20 +345,12 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                   <h1>Software Engineer</h1>
                 </td>
                 <td style="width: 3.125rem; background-color: transparent"></td>
-                <td class="rhombus">
+                <td>
                   <img
                     border="0"
                     class="profile-pic-mobile"
-                    style="
-                      height: 18.75rem;
-                      width: 18.75rem;
-                      clip-path: polygon(5% 10%, 100% 0%, 100% 100%, 0% 95%);
-
-                      border-top-left-radius: 1.25rem;
-                      border-bottom-left-radius: 1.25rem;
-                      border: 0;
-                    "
-                    src="https://i.postimg.cc/9F9kf7BR/06-Nathan-Paradiso-2-Software-Engineering-Sep-2023.png"
+                    style="height: 18.75rem; width: 18.75rem; border: 0"
+                    src="https://i.postimg.cc/Pqpm8qBD/06-Nathan-Paradiso-2-Software-Engineering-Sep-2023.png"
                     alt="Nate Paradiso Profile Pic"
                   />
                 </td>
@@ -367,36 +366,30 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
         cellspacing="0"
         class="wrapper"
         width="100%"
-        style="max-width: 37.5rem; background-color: #efefef"
+        style="max-width: 600px; background-color: #efefef"
         role="presentation"
       >
         <tr>
           <td align="center" valign="top" width="100%">
-            <table class="wrapper" role="presentation">
+            <table class="wrapper">
               <tr>
                 <td
                   width="300"
                   align="left"
                   valign="center"
                   style="
-                    height: 12.5rem;
+                    height: 200px;
                     color: #333333;
-                    font-family: 'oswald', Arial, sans-serif;
+                    font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                     font-size: 16px;
-                    padding: 3.125rem 0rem 3.125rem 1.875rem;
+                    padding: 50px 0px 50px 30px;
                   "
                 >
                   <a href="https://selfie-photographer-of-the-year.netlify.app/" target="_blank">
                     <img
-                      style="
-                        width: 18.75rem;
-                        height: 33.3331rem;
-                        margin: 0.9375rem;
-                        border-radius: 1.25rem;
-                        border: 0;
-                      "
+                      style="width: 300px; margin: 15px"
                       class="selfie-pic"
-                      src="https://i.postimg.cc/W4pjrn9f/Screenshot-2024-01-19-at-1-58-15-PM.png"
+                      src="https://i.postimg.cc/jdPc0sHx/Screenshot-2024-01-19-at-1-58-15-PM.png"
                       alt="selfie photographer of the year"
                     />
                   </a>
@@ -407,15 +400,15 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                   valign="center"
                   class="about-mobile"
                   style="
-                    height: 12.5rem;
+                    height: 200px;
                     color: #333333;
-                    font-family: 'oswald', Arial, sans-serif;
+                    font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                     font-size: 16px;
-                    padding: 0rem 0.625rem;
+                    padding: 0px 10px;
                   "
                 >
                   <h3 style="color: #8a6814">- about me -</h3>
-                  <h2 class="about-text" style="padding-right: 1.25rem">
+                  <h2 class="about-text" style="padding-right: 20px">
                     I craft websites that are both playful and distinctive, seamlessly merging
                     creativity with functionality.
                   </h2>
@@ -432,7 +425,7 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
         cellspacing="0"
         class="wrapper"
         width="100%"
-        style="max-width: 37.5rem"
+        style="max-width: 37.5rem; mso-padding-alt: 1.25rem 1.25rem 1.25rem 1.25rem"
         role="presentation"
       >
         <tr>
@@ -445,9 +438,10 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                   valign="center"
                   style="
                     height: 12.5rem;
-                    font-family: 'oswald', Arial, sans-serif;
+                    font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                     font-size: 16px;
-                    padding: 1.25rem 1.25rem 1.25rem 3.125rem;
+                    padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+                    mso-padding-alt: 1.25rem 1.25rem 1.25rem 1.25rem;
                     color: #333333;
                   "
                 >
@@ -474,9 +468,11 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                         width: 7rem;
                         height: 2.8125rem;
                         padding: 0.3125rem;
+                        mso-padding-alt: 0.3125rem;
+
                         border-radius: 0.625rem;
                         background-color: #8a6814;
-                        font-family: 'oswald', Arial, sans-serif;
+                        font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                         color: #fff;
                         border: none;
                         cursor: pointer;
@@ -491,6 +487,7 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
           </td>
         </tr>
       </table>
+
       <table
         align="center"
         border="0"
@@ -498,7 +495,12 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
         cellspacing="0"
         class="wrapper"
         width="100%"
-        style="max-width: 37.5rem; margin-top: 1.875rem; margin-bottom: 1.875rem"
+        style="
+          max-width: 37.5rem;
+          margin-top: 1.875rem;
+          margin-bottom: 1.875rem;
+          mso-padding-alt: 0.625rem 0.625rem 0.625rem 0.625rem;
+        "
         role="presentation"
       >
         <tr>
@@ -509,22 +511,21 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
             cellspacing="0"
             class="wrapper"
             width="100%"
-            style="max-width: 37.5rem; margin-top: 1.875rem; margin-bottom: 1.875rem"
+            style="
+              max-width: 37.5rem;
+              margin-top: 1.875rem;
+              margin-bottom: 1.875rem;
+              mso-padding-alt: 0.625rem 0.625rem 0.625rem 0.625rem;
+            "
             role="presentation"
           >
             <tr>
               <td align="center" valign="top" width="100%">
-                <!-- Container table with conditional width -->
-                <!--[if (gte mso 9)|(IE)]>
-      <table role="presentation" class="tflex" style="width: 100%;">
-      <![endif]-->
-                <!--[if !mso]><!-->
                 <table
                   role="presentation"
                   class="tflex-column"
-                  style="max-width: 600px; width: 100%"
+                  style="max-width: 600px; width: 100%; mso-padding-alt: 0 0.625rem 0 0.625rem"
                 >
-                  <!--<![endif]-->
                   <tr>
                     <!-- First column -->
                     <td style="background-color: transparent" class="tflex-column"></td>
@@ -534,11 +535,12 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                       class="tflex-column"
                       width="25%"
                       style="
-                        font-family: 'oswald', Arial, sans-serif;
+                        font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                         font-size: 16px;
                         color: #333333;
                         background-color: #efefef;
                         padding: 0.625rem;
+                        mso-padding-alt: 0.625rem;
                         border-radius: 0.5rem;
                       "
                     >
@@ -552,11 +554,13 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                       width="25%"
                       class="tflex-column"
                       style="
-                        font-family: 'oswald', Arial, sans-serif;
+                        font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                         font-size: 16px;
                         color: #333333;
                         background-color: #efefef;
                         padding: 0.625rem;
+                        mso-padding-alt: 0.625rem;
+
                         border-radius: 0.5rem;
                       "
                     >
@@ -570,11 +574,13 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                       width="25%"
                       class="tflex-column"
                       style="
-                        font-family: 'oswald', Arial, sans-serif;
+                        font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                         font-size: 16px;
                         color: #333333;
                         background-color: #efefef;
                         padding: 0.625rem;
+                        mso-padding-alt: 0.625rem;
+
                         border-radius: 0.5rem;
                       "
                     >
@@ -607,11 +613,12 @@ In our HTML tag we include a language for accessibility purposes and VML namespa
                   valign="center"
                   style="
                     height: 6.25rem;
-                    font-family: 'oswald', Arial, sans-serif;
+                    font-family: 'Oswald', Courier New, Georgia, Times New Roma, Trebuchet;
                     font-size: 16px;
                     color: #333333;
                     background-color: #efefef;
                     padding: 0.625rem;
+                    mso-padding-alt: 0.625rem;
                   "
                 >
                   <p>Thanks for stopping by!</p>
